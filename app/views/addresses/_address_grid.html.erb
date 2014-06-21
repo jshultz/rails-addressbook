@@ -1,0 +1,40 @@
+
+  <div id="items_grid" >
+
+    <div class="row">
+      <div class="col-xs-12">
+        <%= render :partial => 'addresses/form', :locals => {:contactid => @contact.id}  %>
+      </div>
+    </div>
+
+
+    <% if @addresses %>
+
+        <% @addresses.each do |address| %>
+
+            <div class="row">
+              <div class="address row">
+                <div class="col-xs-12">
+                  <%= address.street %>
+                  <%= address.street2 %>
+                  <%= address.city %>
+                  <%= address.state %>
+                  <%= address.zip %>
+                  <%= address.phone %>
+                </div>
+              </div>
+              <div class="actions row">
+                <div class="col-xs-2">
+                  <%= link_to 'Edit', edit_address_path(address), class: "btn btn-warning remove_fields" %>
+                </div>
+                <div class="col-xs-3">
+                  <%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger remove_fields" %>
+                </div>
+              </div>
+            </div>
+
+        <% end %>
+
+    <% end %>
+
+  </div>

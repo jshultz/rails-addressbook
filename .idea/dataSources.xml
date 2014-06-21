@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1890931275">
+    <data-source source="LOCAL" name="Rails addressbook: development" uuid="3353c841-0eb2-468f-bb8e-0c02b8c7a763">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails addressbook: test" uuid="147cd8bc-13d6-4b2c-8c50-3d3feb789c9e">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:addressbook_test</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails addressbook: production" uuid="59c6f3be-0a6a-4e8b-901c-7b7edeb36788">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:addressbook_production</jdbc-url>
+      <user-name>addressbook</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfebdfeedfeedff8dfefdff9dff9dfe8dfe5dfe5dfe1dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

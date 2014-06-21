@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Listing contacts</h1>
+  </div>
+</div>
+<div class="row">
+  <p class="alert-success alert" id="notice"><%= notice %></p>
+</div>
+<div class="row">
+  <section id="contacts" class="col-xs-12 col-sm-3 col-md-6">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="newcontact">New Contact</p>
+      </div>
+      <div id="newcontact">
+            <%= render 'contacts/form' %>
+      </div>
+    </div>
+    <% @contacts.each do |contact| %>
+        <div class="contact row" id="<%= contact.id %>">
+
+            <div class="name row">
+              <div class="col-xs-4"><strong>First Name: <br/><%= contact.firstname %></strong></div>
+              <div class="col-xs-4"><strong>Last Name: <br/><%= contact.lastname %></strong></div>
+              <div class="col-xs-4"><strong>Email: <br/><%= contact.email %></strong></div>
+            </div>
+            <div class="actions row">
+              <div class="col-xs-4"><%= link_to 'Show', fetch_address_path(:id => contact.id), :remote => true, class: "btn btn-primary remove_fields" %></div>
+              <div class="col-xs-4"><%= link_to 'Edit', edit_contact_path(contact), class: "btn btn-warning remove_fields" %></div>
+              <div class="col-xs-4"><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger remove_fields"  %></div>
+            </div>
+
+        </div>
+    <% end %>
+  </section>
+  <section id="details" class="col-xs-12 col-md-5 col-md-push-1">
+
+
+
+  </section>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.newcontact').on('click', function(e) {
+            $('#newcontact').toggle();
+        })
+
+        $('.name').on('click', function(e) {
+            $(this).siblings('.actions').toggle();
+        })
+
+    });
+</script>

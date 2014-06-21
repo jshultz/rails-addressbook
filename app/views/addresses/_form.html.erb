@@ -1,0 +1,51 @@
+
+<% @address = Address.new %>
+<%= form_for(@address) do |f| %>
+  <% if @address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% @address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= hidden_field(:address, :contacts_id, :value => contactid) %>
+
+<div class="row">
+  <div class="field col-xs-6">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field col-xs-6">
+    <%= f.label :street2 %><br>
+    <%= f.text_field :street2 %>
+  </div>
+</div>
+<div class="row">
+  <div class="field col-xs-6">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field col-xs-6">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+</div>
+<div class="row">
+  <div class="field col-xs-6">
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field col-xs-6">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
